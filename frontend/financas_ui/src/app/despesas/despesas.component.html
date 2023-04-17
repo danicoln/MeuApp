@@ -1,0 +1,37 @@
+
+<div class="container">
+
+  <div>
+    <h1>Minhas Finanças</h1>
+  </div>
+
+  <p-table [value]="transacoes">
+    <ng-template pTemplate="header">
+
+      <tr>
+        <th>Id</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-transacao>
+      <tr>
+        <td>{{ transacao.id }}</td>
+        <td>{{ transacao.descricao }}</td>
+        <td>{{ transacao.valor }}</td>
+        <td>{{ formatDate(transacao.data)}}</td>
+        <td>
+          <!--Falta adicionar o (click)="metodo" nos botoes-->
+          <button pButton type="button" label="Editar" icon="pi pi-pencil" class="p-button-success"
+          ></button>
+          <button pButton type="button" label="Excluir" icon="pi pi-trash" class="p-button-danger"
+          ></button>
+        </td>
+      </tr>
+
+    </ng-template>
+  </p-table>
+
+</div>
