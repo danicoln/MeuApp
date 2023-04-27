@@ -16,6 +16,7 @@
         <th>Ações</th>
       </tr>
     </ng-template>
+
     <ng-template pTemplate="body" let-transacao>
       <tr>
         <td>{{ transacao.id }}</td>
@@ -24,14 +25,16 @@
         <td>{{ formatDate(transacao.data)}}</td>
         <td>
           <!--Falta adicionar o (click)="metodo" nos botoes-->
-          <button pButton type="button" label="Editar" icon="pi pi-pencil" class="p-button-success"
+          <button pButton type="button" label="Editar" icon="pi pi-pencil" class="p-button-warning"
           ></button>
           <button pButton type="button" label="Excluir" icon="pi pi-trash" class="p-button-danger"
-          ></button>
+          (click)="excluirTransacao(transacao.id)"></button>
         </td>
       </tr>
 
     </ng-template>
   </p-table>
+  <button pButton type="button" label="Adicionar Transação" icon="pi pi-file" class="p-button-success"
+  routerLink="/adicionar-transacao"></button>
 
 </div>

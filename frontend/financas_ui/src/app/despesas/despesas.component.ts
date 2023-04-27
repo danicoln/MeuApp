@@ -1,8 +1,7 @@
+import { Transacao } from './../models/transacao.model';
 import { TransactionService } from './../services/transaction.service';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-
-import { Transacao } from '../models/transacao.model';
 
 
 @Component({
@@ -42,6 +41,13 @@ export class DespesasComponent implements OnInit {
         this.transacoes = transactions;
       });
     });
+  }
+
+  excluirTransacao(indice: number){
+
+    this.transactionService.excluirTransacao(indice);
+    this.transacoes.splice(indice, 1);
+
   }
 
 }

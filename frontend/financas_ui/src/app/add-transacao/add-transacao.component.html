@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Adicionar Transação</h1>
+<div>
+  <form #formulario="ngForm" (ngSubmit)="adicionarTransacao(formulario)">
+    <div>
+      <label for="valor">Valor:</label>
+      <input pInputText type="number" id="valor" name="valor" ngModel required>
+    </div>
+
+    <div>
+      <label for="descricao">Descrição:</label>
+      <input pInputText type="text" id="descricao" name="descricao" ngModel required>
+    </div>
+
+    <div>
+      <label for="data">Data:</label>
+      <input pInputText type="date" id="data" name="data" ngModel required>
+    </div>
+
+    <button pButton type="button" label="Adicionar" icon="pi pi-check" class="p-button-success" submit="adicionarTransacao(formulario)"></button>
+    <button pButton type="button" label="Voltar" icon="pi pi-arrow-left" class="p-button-success" (click)="adicionarTransacao(formulario)"></button>
+  </form>
+
+</div>
+</div>
